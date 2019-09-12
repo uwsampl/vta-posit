@@ -1,0 +1,10 @@
+00000001 //Posit: 00000001, Decimal: 0.000244140625 (min-non-zero Posit)
+62626262
+62626262 //Posit: 01100010, Decimal: 5
+62626262
+61000061 //Posit: 01100001, Decimal 4.5
+00610061
+000000a8 //Posit: 10101000, Decimal -3
+a8000000
+00cfcfcf //Posit: 11001111, Decimal -0.53125 
+0000cf00

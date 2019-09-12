@@ -1,0 +1,4 @@
+out/
+*.log *.jou
+*.backup.log *backup.jou
+vivado*
