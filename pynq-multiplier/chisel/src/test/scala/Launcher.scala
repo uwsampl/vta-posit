@@ -25,12 +25,9 @@ import chisel3.iotesters.{Driver, TesterOptionsManager}
 import utils.TestRunner
 import unittest._
 import vta.posit._
-import example._
-
 
 
 object Launcher {
-  //implicit val p = new Parameters(size = 8)
   implicit val config = new PositMultiplyConfig(8, 1, 2)
   val tests = Map(  
     "positMultiply" -> { (manager: TesterOptionsManager) =>
