@@ -225,6 +225,13 @@ class CountLeadingZerosTree(leftTreeWidth: Int = 8, rightTreeWidth: Int = 8)(
 
 }
 
+/** Counts the leading zeros in the input.
+  * 
+  * This uses a recursive tree structure to count the number of 0s at the front of the input.
+  * @param width the width, in bits, of the input
+  * @param addOffset a constant added to `out`, so as to avoid an additional adder 
+  *         in a case where one wants to shift past a leading 1, for example
+  */
 class CountLeadingZeros(width: Int = 6, addOffset: Int = 0)(implicit config: PositMultiplyConfig)
     extends Module {
   val io = IO(new Bundle {
@@ -245,7 +252,7 @@ class CountLeadingZeros(width: Int = 6, addOffset: Int = 0)(implicit config: Pos
   val inPad = if (addOffset == 0) {
     io.in
   } else {
-    Cat(Fill(addOffset, 0.U), io.in) //inPadVec.asUInt
+    Cat(Fill(addOffset, 0.U), io.in)
   }
 
   val tree = Module(
