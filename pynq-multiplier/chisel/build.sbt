@@ -60,9 +60,14 @@ resolvers ++= Seq(
   Resolver.sonatypeRepo("snapshots"),
   Resolver.sonatypeRepo("releases"))
 
-libraryDependencies ++= Seq(
-  "edu.berkeley.cs" %% "chisel3" % "3.1.8",
-)
+// Provide a managed dependency on X if -DXVersion="" is supplied on the command line.
+val defaultVersions = Map(
+  "chisel3" -> "3.1.+",
+  "chisel-iotesters" -> "[1.2.5,1.3-SNAPSHOT["
+  )
+
+libraryDependencies ++= Seq("chisel3","chisel-iotesters").map {
+  dep: String => "edu.berkeley.cs" %% dep % sys.props.getOrElse(dep + "Version", defaultVersions(dep)) }
 
 scalacOptions ++= scalacOptionsVersion(scalaVersion.value)
 javacOptions ++= javacOptionsVersion(scalaVersion.value)
