@@ -21,7 +21,7 @@ so it can't correctly check the results from random trials (only getting within 
 
 Currently, registers exist between the decode and multiply stages, and within the multiplication to create a 3 stage pipeline, capable of running at ~133 MHz.
 
-To Do:
+**To Do**:
 - Incorporate the conversion of two’s complement to sign magnitude directly inside the decode and encode stages.
 - Remove any logic inside the rounding modules for rounding up from zero. This is leftover from the adapted design that originally allowed underflow to 0, which was not correct posit behavior and is no longer implemented.
 - Add scala documentation comments to classes missing them.
