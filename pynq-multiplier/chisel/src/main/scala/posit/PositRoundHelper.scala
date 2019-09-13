@@ -1,5 +1,3 @@
-// See README.md for license details.
-
 package vta.posit
 
 import chisel3._

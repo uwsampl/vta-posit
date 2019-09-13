@@ -1,5 +1,3 @@
-// See README.md for license details. --- This was a line inserted/demanded by intelliJ, not accurate at the moment
-
 package vta.posit
 
 import chisel3._
